@@ -1,24 +1,31 @@
-
-
+body{
+background-color: aquamarine;
+}
 h1{
-    background-color: yellow;
-   color: whitesmoke;
-   font-weight: bold;
-   font-size: 2rem;
-   font-family: cursive;
-   text-align: center;
-   margin-top: 300px;
-   margin-left: 500px;
-   width: 400px;
-   height: 50px;
+    font-size: 2.5rem;
+    color: white;
+    background-color: wheat;
+    height: 80px;
+    width: 200px;
+}
+
+.container{
+    margin: 300px 500px;
+    border: none;
+}
+input{
+    background-color: aliceblue;
+    color: blue;
+    height: 30px;
+    width: 200px;
+    padding: 20px;
+    font-weight: bold;
 }
 button{
-    background-color: blue;
-   color: whitesmoke;
-   font-weight: bold;
-   font-family: cursive;
-   text-align: center;
-   width: 100px;
-   height: 100px;
-   margin-left: 500px;
+    height: 50px;
+    background-color: white;
+    width: 200px;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 1.5rem;
 }

@@ -1,26 +1,36 @@
-import React ,{useState} from "react";
+import React,{useState} from "react";
 
 
-function App() {
 
-  const now=new Date().toLocaleTimeString();
 
-  const [time,setTime]=useState(now);
-  console.log(time)
-
-setInterval(Time,1000);
-function Time()
+function App()
 {
-  const nowTime=new Date().toLocaleTimeString();
-  setTime(nowTime);
-}
 
-
+  const [text,srtText]=useState("Hello");
+  const [isMouse,setMouseOver]=useState(false);
+    function headingText()
+    {
+      srtText("heading")
+    }
+    function changetoBlack()
+    {
+      setMouseOver(true);
+    }
+    function changeToWhite()
+    {
+      setMouseOver(false);
+    }
   return (
-  <div id="p">
-     <h1>{time}</h1>
-    {/* <button onClick={Time}>+</button> */}
-  </div>
+    <div className="container">
+      <h1>{text}</h1>
+      <input type="text" placeholder="What is your name?"/><br />
+      <button type="submit"
+       style={{backgroundColor:isMouse ? "black" : "white"}}
+       onClick={headingText}
+       onMouseOver={changetoBlack}
+       onMouseLeave={changeToWhite}
+       >Submit</button>
+    </div>
   );
 }
 
