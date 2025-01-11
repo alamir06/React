@@ -22,3 +22,14 @@ button{
    height: 100px;
    margin-left: 500px;
 }
+table{
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    border-radius: 5px;
+    background-color: aqua;
+    border: 2px solid white;
+    padding: 20px;
+    margin: 20px;
+    margin: 200px 400px;
+}
