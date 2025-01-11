@@ -3,23 +3,32 @@ import React ,{useState} from "react";
 
 function App() {
 
-  const now=new Date().toLocaleTimeString();
+  const [name,setName]=useState("");
 
-  const [time,setTime]=useState(now);
-  console.log(time)
+  const [name1,setName1]=useState("");
 
-setInterval(Time,1000);
-function Time()
-{
-  const nowTime=new Date().toLocaleTimeString();
-  setTime(nowTime);
-}
+   function handleInputChange(event)
+   {
+      setName(event.target.value)
+   }
+   function handleClickedButton(event)
+   {
+  setName1(name);
+ 
 
-
+   event.preventDefault();
+   }
   return (
-  <div id="p">
-     <h1>{time}</h1>
-    {/* <button onClick={Time}>+</button> */}
+  <div className="container">
+      <h1>Hello {name1}</h1>
+      <form onSubmit={handleClickedButton}>
+      <input
+       onChange={handleInputChange} 
+       type="text" placeholder="What is your name?"
+       value={name}
+       /><br /> <br />
+      <button type="submit" >Submit</button>
+      </form>
   </div>
   );
 }
