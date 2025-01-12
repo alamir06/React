@@ -1,36 +1,50 @@
-import React,{useState} from "react";
-
+import React ,{useState} from "react";
 
 
 
 function App()
 {
+  const [item,setItem] = useState("");
+  const [items,setItems] = useState([]);
 
-  const [text,srtText]=useState("Hello");
-  const [isMouse,setMouseOver]=useState(false);
-    function headingText()
-    {
-      srtText("heading")
-    }
-    function changetoBlack()
-    {
-      setMouseOver(true);
-    }
-    function changeToWhite()
-    {
-      setMouseOver(false);
-    }
+  function changeInput(event)
+  {
+    const inputtvALUE=event.target.value;
+    setItem(inputtvALUE);
+  }
+ 
+  function handleClick(event)
+  {
+     setItems((preValue)=>{
+         return [...preValue,item];
+     });
+     setItem("");
+  }
+
   return (
-    <div className="container">
-      <h1>{text}</h1>
-      <input type="text" placeholder="What is your name?"/><br />
-      <button type="submit"
-       style={{backgroundColor:isMouse ? "black" : "white"}}
-       onClick={headingText}
-       onMouseOver={changetoBlack}
-       onMouseLeave={changeToWhite}
-       >Submit</button>
+  <div className="container">
+    <div className="Heading">
+      <h1>To-Do List</h1>
     </div>
+    <div className="form">
+      <input 
+      name="item"
+      onChange={changeInput}
+      type="text" 
+      value={item} />
+      <button onClick={handleClick} >
+        <span>Add</span>
+      </button>
+    </div>
+    <div>
+      <ul>
+        {items.map((todoitem)=>{
+           return <li>{todoitem}</li>
+        })}
+      </ul>
+    </div>
+     
+  </div>
   );
 }
 
