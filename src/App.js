@@ -1,6 +1,30 @@
 import React ,{useState} from "react";
 
 
+
+
+//ES6 spread operator
+
+//array spread
+const names=["Alamairew","Aklilu","Temesgen","GHN","Fkadie"];
+const names1=["Bimrew",...names,"alamir","Tafesse"];
+
+   console.log(names1);
+   
+//object spread
+   const name={
+    fname:"Alamirew",
+    lname:"Wagaw"
+   }
+   const user={
+       id:1,
+       key:89,
+    ...name,
+    username:"alamirew wagaw"
+   }
+
+   console.log(user);
+   
 function App() {
    
 
@@ -13,32 +37,10 @@ function App() {
 function handleInputChange(event){
      const {name,value}=event.target;
      setContact((prevalue)=>{
-     if(name==="fname")
-     {
       return{
-        fname:value,
-        lname:prevalue.lname,
-        email:prevalue.email
+        ...prevalue,
+          [name]:value
       }
-     }
-     else if(name==="lname")
-      {
-       return{
-         fname:prevalue.fname,
-         lname:value,
-         email:prevalue.email
-       }
-      }
-      else if(name==="email")
-        {
-         return{
-           fname:prevalue.fname,
-           lname:prevalue.lname,
-           email:value
-         }
-        }
-        
-       
     });
 }
 
