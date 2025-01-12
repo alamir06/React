@@ -12,6 +12,12 @@ h1{
    width: 400px;
    height: 50px;
 }
+p{
+ 
+   margin-top: 100px;
+   margin-left: 500px;
+   
+}
 button{
     background-color: blue;
    color: whitesmoke;
