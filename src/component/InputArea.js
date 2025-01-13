@@ -1,30 +1,52 @@
-import React ,{useState} from "react";
+import React, { useState } from "react";
+
+
 
 function InputArea(props)
 {
-    const [item,setItem] = useState("");
+    const [note,setNote] = useState({
+        title:"",
+        note:" "
+    });
 
-    function changeInput(event)
+    function handleInput(event)
     {
-      const inputtvALUE=event.target.value;
-      setItem(inputtvALUE);
-    }
+        const {name,value}=event.target;
+        setNote((preValue=>{
+          return {
+            ...preValue,
+            [name]:value
+          }
+        }));
+    } 
     return (
-    <div>
-    <div className="form">
-     <input 
-      name="item"
-      onChange={changeInput}
-      type="text" 
-      value={item} />
-      <button onClick={()=>{
-       props.onAdd(item);
-       setItem("");
-      }} >
-      <span>Add</span>
-      </button>
-      </div>
-    </div>
+       <div>
+       <h3 className="note-title">Write you note👇</h3>
+        <label className="title">title</label>
+        <input 
+        name="title"
+        placeholder="Write Title"
+        onChange={handleInput}
+        type="text"
+        value={note.title}
+        /><br />
+        <label className="note">Note</label>
+        <input
+        name="note" 
+        placeholder="Take your note"
+        onChange={handleInput}
+        type="text"
+        value={note.note}
+        />
+
+        <button onClick={()=>{
+          props.onAdd(note);
+          setNote({
+            title:"",
+            note:""
+          });
+        }}>Add</button>
+       </div>
     );
 }
 

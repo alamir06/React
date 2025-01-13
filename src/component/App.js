@@ -1,48 +1,53 @@
-import React ,{useState} from "react";
-import ToDoList from "./ToDoList";
+import React, { useState } from "react";
+import Heading from "./Heading";
 import InputArea from "./InputArea";
+import ToNote from "./ToNote";
+
+
+
 
 function App()
 {
-  
-  const [items,setItems] = useState([]);
- 
-  function handleClick(item)
-  {
-     setItems((preValue)=>{
-         return [...preValue,item];
-     });
-    
-  }
-   function DeleteItem(id)
-   {
-    setItems(preValue=>{
-         return preValue.filter((item,index)=>{
+  const [notes,setNotes] = useState([]);
+
+    function addItem(note)
+    {
+       setNotes(preValues=>{
+        return [...preValues,note]
+       });
+      
+    }
+   
+    function deleteItem(id)
+    {
+       setNotes(preValues=>{
+        return preValues.filter((noteitem,index)=>{
           return index!=id;
-         })
-    });
-   }
+        })
+       });
+    }
   return (
-  <div className="container">
-    <div className="Heading">
-      <h1>To-Do List</h1>
-    </div>
-    <InputArea
-     onAdd={handleClick}
-      />
     <div>
-      <ul>
-        {items.map((todoitem,index)=> (
-          <ToDoList 
-            key={index}
-            id={index}
-            text={todoitem}
-            onChecked={DeleteItem}
-          />
-        ))}
-      </ul>
-    </div> 
-  </div>
+      <Heading />
+      <div className="container">
+        <InputArea
+         onAdd={addItem}
+         />
+      </div>
+      <div className="displau">
+      {notes.map((noteItem,index)=>(
+         <ToNote 
+          title={noteItem.title}
+          note={noteItem.note}
+          key={index}
+          id={index}
+          onChecked={deleteItem}
+         />
+      ))}
+      </div>
+    </div>
   );
 }
+
+
 export default App;

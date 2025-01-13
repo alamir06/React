@@ -1,46 +1,109 @@
 body{
     background-color:#CBA35C ;
 }
-.container{
-    margin-left: 400px;
-     background-color: whitesmoke;
-     background: url("https://img.freepik.com/free-vector/vector-polka-background-with-small-dots_1017-13972.jpg");
-    border-radius: 10px;
-    padding: 10px 20px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 15px;
-    height: 400px;
-    width: 200px;
-}
-.Heading{
-    background-color: #CBA35C;
+.heading{
+    background-color: #FFEB00;
     font-family: cursive;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 2rem;
     border-radius: 10px;
     text-align: center;
-    width: 200px;
-    margin-left: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    margin-top: -10px;
 }
+.container{
+    margin-left: 400px;
+    background-color: #FFFAEC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    height: 280px;
+    width: 550px;
+}
+.note-title{
+    text-align: center;
+    margin-top: 0px;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 1.5rem;
+}
+
 input{
-  border-bottom: dotted;
+  border-bottom: none;
   border-top: none;
   border-left: none;
   border-right: none;
- 
+  background-color: white;
+  color: blue;
+  border-color: red;
   font-family: cursive;
- visibility: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
 }
 input:active{
-    border-bottom: dotted;
+  border-bottom: dotted;
   border-top: none;
   border-left: none; 
   border-right: none;
+  border-color: blue;
 }
+
 button{
-    background-color: white;
+    background-color: #ECE852;
     color: black;
-    border-radius: 5px;
+    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 380px;
+    left:850px ;
+}
+.title,.note{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    font-family: cursive;
+}
+.note-displayer{
+    background-color: #FFFAEC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 15px;
+    height: auto;
+    width: 300px;
+    margin-top: 20px;
+}
+.notes{
+    font-family: cursive;
+    font-size: 0.9rem;
+
+}
+.note-titles{
+    margin-top: 0px;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 1.5rem;
+}
+.displau{
+    display: flex;
+    gap: 10px;
+}
+.delete{
+    background-color: #ECE852;
+    color: black;
+    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 20px;
+    left:210px ;
 }
